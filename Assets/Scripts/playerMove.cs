@@ -6,6 +6,8 @@ using UnityEditor;
 public class playerMove : MonoBehaviour {
 	public float speed, jumpPower;
 	public Rigidbody2D player;
+	private float RayOffset = 0.5f;
+	private float raycastMaxDistance = 100f;
 	float horiz;
 	bool jump, canJump;
 	int contace;
@@ -19,6 +21,11 @@ public class playerMove : MonoBehaviour {
 	void Update () {
 		horiz = Input.GetAxis("Horizontal") * speed;
 		jump = Input.GetButtonDown("Jump");
+		if(castRay().distance < 0.1){
+			canJump = true;
+		} else {
+			canJump = false;
+		}
 	}
 
 	void FixedUpdate() {
@@ -37,17 +44,11 @@ public class playerMove : MonoBehaviour {
 	}
 	*/
 
-	void OnCollisionStay2D ( Collision2D impact ) {
-		
-		if(impact.gameObject.tag == "wall") {
-			canJump = false;
-		} else {
-			canJump = true;
-		}
-		
-	}
-
-	void OnCollisionExit2D ( Collision2D impact ) {
-		canJump = false;
+	private RaycastHit2D castRay() {
+		Vector2 direction = new Vector2(0f, -1f);
+		// update the raycast direction
+		Vector2 startPoint = new Vector2(this.transform.position.x, this.transform.position.y - RayOffset);
+		Debug.DrawRay(startPoint, direction, Color.red);
+		return Physics2D.Raycast(startPoint, direction, raycastMaxDistance);
 	}
 }
