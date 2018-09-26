@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class button : MonoBehaviour, IPointerDownHandler {
-	load loader = new load();
+	public load loader;
 	public void OnPointerDown(PointerEventData pointerEventData)
     {
         //Output the name of the GameObject that is being clicked
