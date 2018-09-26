@@ -5,6 +5,8 @@ using UnityEngine;
 public class enemy : MonoBehaviour {
 
 	public float speed;
+	public float animationSpeed;
+	public float mass;
 	private Vector3 move;
 	private int trunAngle = 180;
 
@@ -13,6 +15,8 @@ public class enemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		move = new Vector3(-speed, 0f, 0f);
+		gameObject.GetComponent<Animator>().speed = animationSpeed;	
+		gameObject.GetComponent<Rigidbody2D>().mass = mass;
 	}
 	
 	// Update is called once per frame
@@ -27,7 +31,8 @@ public class enemy : MonoBehaviour {
 	private RaycastHit2D castRay(Vector2 direction) {
 		// update the raycast direction
 		float directinalOffSet = RayOffset * (trunAngle == 0 ? 1 : -1);
-		Vector2 startPoint = new Vector2(this.transform.position.x + directinalOffSet, this.transform.position.y);
+		Vector2 startPoint = new Vector2(this.transform.position.x + directinalOffSet, 
+			this.transform.position.y);
 		//Debug.DrawRay(startPoint, direction, Color.red);
 		return Physics2D.Raycast(startPoint, direction, raycastMaxDistance);
 	}

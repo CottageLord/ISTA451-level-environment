@@ -15,8 +15,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - background
+  - map
   - 
   - 
   - 
@@ -42,9 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: tree
+    uniqueID: 1265549275
+    locked: 0
+  - name: character
+    uniqueID: 786792297
+    locked: 0
+  - name: bush
+    uniqueID: 1114315603
+    locked: 0
+  - name: platforms
+    uniqueID: 3877857669
+    locked: 0
   - name: UI
     uniqueID: 3870749825
-    locked: 0
-  - name: scene
-    uniqueID: 3877857669
     locked: 0
