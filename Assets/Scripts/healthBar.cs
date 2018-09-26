@@ -28,7 +28,6 @@ public class healthBar : MonoBehaviour {
 		if(i < 0) {
 			i = 0;
 		}
-		print("The nonempty heart is at: " + i);
 		while(amount != 0 && i >= 0 && i <= 4) {
 			amount -= changeAmount;
 			health[i] += changeAmount;
@@ -49,9 +48,7 @@ public class healthBar : MonoBehaviour {
 	}
 
 	private void updateHealthBar() {
-		print("current health: [");
 		for(int i = 0; i < heartAmount; i++) {
-			print("[" + health[i] + "]");
 			changeTexture(hearts[i], health[i]);
 		}
 	}

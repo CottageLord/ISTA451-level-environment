@@ -8,7 +8,6 @@ public class moneyBar : MonoBehaviour {
 	public Text moneyAmount;
 
 	public void changeMoney() {
-		print("change money to: " + player.getMoney());
 		moneyAmount.text = "" + player.getMoney();
 	}
 }

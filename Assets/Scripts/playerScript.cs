@@ -38,11 +38,11 @@ public class playerScript : MonoBehaviour {
 	// called by button (for now)
 	// notify health bar
 	public void takeDamage(int damage) {
+		health -= damage;
 		if(health <= 0) {
 			print("You died.");
 			return;
 		}
-		health -= damage;
 		healthBar.changeHealth(-damage);
 		// TODO: if died
 	}
