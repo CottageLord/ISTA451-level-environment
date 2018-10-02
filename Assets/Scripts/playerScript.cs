@@ -39,21 +39,13 @@ public class playerScript : MonoBehaviour {
 	// notify health bar
 	public void takeDamage(int damage) {
 		health -= damage;
-		if(health <= 0) {
-			// TODO: if died
-			print("You died!");
-			return;
-		}
 		healthBar.changeHealth(-damage);
 	}
 
 	// called by button (for now)
 	// notify health bar
 	public void getHealed(int heal) {
-		if(health <= 0) {
-			// justify the uncompleted game
-			print("You are rescued!");
-		}
+		
 		if (health + heal > maxHealth) {
 			heal = maxHealth - health;
 			health = maxHealth;
