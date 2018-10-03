@@ -9,17 +9,21 @@ public class playerScript : MonoBehaviour {
 	public healthBar healthBar;
 	public moneyBar moneyBar;
 	public bool isWalking;
+
+	public RaycastHit2D raycast;
+
 	private Animator[] animator;
 	private float RayOffset = 0.5f;
 	private float raycastMaxDistance = 100f;
 
+	public float onGroundOffset;
 	public int trunAngle = 180;
 	private int health;
 	private int money;
 	private int maxHealth = 10;
 
 	private float horiz;
-	private bool jump, canJump;
+	public bool jump, canJump;
 	private int contace;
 
 	// Use this for initialization
@@ -84,7 +88,9 @@ public class playerScript : MonoBehaviour {
 		}
 
 		jump = Input.GetButtonDown("Jump");
-		if(castRay().distance < 0.1){
+		raycast = castRay();
+		
+		if(raycast.distance < onGroundOffset){
 			canJump = true;
 			animator[0].SetBool("grounded", true);
 		} else {
