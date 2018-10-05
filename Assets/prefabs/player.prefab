@@ -23,11 +23,12 @@ GameObject:
   - component: {fileID: 114607847543821260}
   - component: {fileID: 50542339742389514}
   - component: {fileID: 114406938161053112}
-  - component: {fileID: 70095481857376450}
   - component: {fileID: 95993053755783076}
   - component: {fileID: 114394703351610332}
-  - component: {fileID: 82605992443819414}
   - component: {fileID: 81033589332211680}
+  - component: {fileID: 70346058340136228}
+  - component: {fileID: 114439058600857886}
+  - component: {fileID: 82056143353982230}
   m_Layer: 11
   m_Name: player
   m_TagString: Untagged
@@ -68,7 +69,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &70095481857376450
+--- !u!70 &70346058340136228
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,8 +81,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.033506393, y: 0}
-  m_Size: {x: 0.6090908, y: 1}
+  m_Offset: {x: -0.008922577, y: 0}
+  m_Size: {x: 0.588583, y: 1}
   m_Direction: 0
 --- !u!81 &81033589332211680
 AudioListener:
@@ -90,7 +91,7 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1435375105754034}
   m_Enabled: 1
---- !u!82 &82605992443819414
+--- !u!82 &82056143353982230
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,19 +99,19 @@ AudioSource:
   m_GameObject: {fileID: 1435375105754034}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: cb9146e431f77a0458caf5164b332788,
+  OutputAudioMixerGroup: {fileID: 243477713493550452, guid: cb9146e431f77a0458caf5164b332788,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 15b220b1b01e9d8469f3b754b8eb2a10, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.48120117
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -236,10 +237,23 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   moneyBar: {fileID: 0}
   isWalking: 0
-  onGroundOffset: 0
+  onGroundOffset: 0.15
   trunAngle: 180
   jump: 0
   canJump: 0
+--- !u!114 &114439058600857886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1435375105754034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe7b8ff8c3c8a0b4b95168cefefbe328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 50542339742389514}
+  playerStatus: {fileID: 114406938161053112}
 --- !u!114 &114607847543821260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -257,8 +271,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 59cd085e234f32e4daddd2e589174a96, type: 3}
   - {fileID: 8300000, guid: 2f96d3d47551ed848be9307342dcd667, type: 3}
   - {fileID: 8300000, guid: 4901040e735fd2547870b06a27124c49, type: 3}
+  - {fileID: 8300000, guid: 15b220b1b01e9d8469f3b754b8eb2a10, type: 3}
   - {fileID: 8300000, guid: 4dcd8f2dc477f5e4aa277ee503048ee8, type: 3}
-  footstepsSource: {fileID: 82605992443819414}
+  footstepsSource: {fileID: 82056143353982230}
   footstepInterval: 0.5
 --- !u!212 &212437598879239058
 SpriteRenderer:
