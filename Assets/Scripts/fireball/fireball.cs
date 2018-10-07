@@ -5,9 +5,11 @@ using UnityEngine;
 public class fireball : MonoBehaviour {
 	public castFireBall caster;
 	public float lifeTime;
+	public Collider2D player;
 	private float currentLife;
 	public Vector3 speed;
 	public bool flying;
+
 	// Use this for initialization
 	void Start () {
 		currentLife = 0;
@@ -16,7 +18,6 @@ public class fireball : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
 		if(flying) {
 			currentLife += Time.deltaTime;
 			transform.position += speed;
@@ -30,4 +31,15 @@ public class fireball : MonoBehaviour {
 			caster.fireBallDestroyed(this);
 		}
 	}
+
+	
+	void OnCollisionEnter2D(Collision2D collision) {
+		if(collision.gameObject.tag == "enemy")
+		{
+			print("hit!");
+			Destroy(this.gameObject);
+			caster.fireBallDestroyed(this);
+		}
+		
+    }
 }

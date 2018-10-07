@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4218596957187456}
   - component: {fileID: 114664327428171538}
+  - component: {fileID: 58175584593735780}
   m_Layer: 10
   m_Name: fireBall
   m_TagString: Untagged
@@ -71,6 +72,21 @@ Transform:
   m_Father: {fileID: 4218596957187456}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!58 &58175584593735780
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1697358226049288}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!114 &114664327428171538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   caster: {fileID: 0}
   lifeTime: 1
+  player: {fileID: 70346058340136228, guid: 9e3f284dd1825de4f8961eea621bc9c5, type: 2}
   speed: {x: 0, y: 0, z: 0}
   flying: 0
 --- !u!198 &198460104311262204

@@ -70,6 +70,8 @@ public class playerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		horiz = Input.GetAxis("Horizontal") * speed;
+
+	
 		// animation stand <-> walk
 		if(horiz == 0) {
 			isWalking = false;
@@ -120,3 +122,4 @@ public class playerScript : MonoBehaviour {
 		transform.rotation = Quaternion.Euler(0, trunAngle, 0);
 	}
 }
+
