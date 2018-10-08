@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class fireball : MonoBehaviour {
 	public castFireBall caster;
+	public int damage;
 	public float lifeTime;
 	public Collider2D player;
 	private float currentLife;

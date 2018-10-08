@@ -5,12 +5,14 @@ using UnityEngine;
 public class playerBattle : MonoBehaviour {
 
 	public Collider2D player;
+	public playerScript playerScript;
 	private bool immune = false;
 
 	void OnCollisionEnter2D(Collision2D collision) {
 		if(collision.gameObject.tag == "enemy")
 		{
 			if (!immune) {
+				playerScript.takeDamage(collision.gameObject.GetComponent<enemy>().damage);
 				StartCoroutine(tempImmune(collision));
 			}
 		}
