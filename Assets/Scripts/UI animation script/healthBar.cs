@@ -18,7 +18,7 @@ public class healthBar : MonoBehaviour {
 	private Image image;
 
 	public void changeHealth(int amount) {
-		print(amount);
+		
 		if(amount < 0) {
 			shaker.Shake();
 		} else {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.UI;
 
 public class playerScript : MonoBehaviour {
 	public float speed, jumpPower;
@@ -9,6 +10,7 @@ public class playerScript : MonoBehaviour {
 	public healthBar healthBar;
 	public moneyBar moneyBar;
 	public bool isWalking;
+	public win winningWindow;
 
 	public RaycastHit2D raycast;
 
@@ -43,6 +45,10 @@ public class playerScript : MonoBehaviour {
 	// notify health bar
 	public void takeDamage(int damage) {
 		health -= damage;
+		if(health <= 0) {
+			health = 0;
+			winningWindow.loseGame();
+		}
 		healthBar.changeHealth(-damage);
 	}
 
@@ -91,7 +97,6 @@ public class playerScript : MonoBehaviour {
 
 		jump = Input.GetButtonDown("Jump");
 		raycast = castRay();
-		
 		if(raycast.distance < onGroundOffset){
 			canJump = true;
 			animator[0].SetBool("grounded", true);

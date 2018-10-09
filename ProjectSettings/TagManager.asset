@@ -56,6 +56,9 @@ TagManager:
   - name: platforms
     uniqueID: 3877857669
     locked: 0
+  - name: menu
+    uniqueID: 582733407
+    locked: 0
   - name: UI
     uniqueID: 3870749825
     locked: 0

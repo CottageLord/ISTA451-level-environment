@@ -37,7 +37,6 @@ public class fireball : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision) {
 		if(collision.gameObject.tag == "enemy")
 		{
-			print("hit!");
 			Destroy(this.gameObject);
 			caster.fireBallDestroyed(this);
 		}

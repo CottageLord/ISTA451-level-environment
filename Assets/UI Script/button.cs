@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class button : MonoBehaviour, IPointerDownHandler {
-	public load loader;
+    public int sceneNum;
 	public void OnPointerDown(PointerEventData pointerEventData)
     {
-    	loader = new load();
         //Output the name of the GameObject that is being clicked
         if(name == "startBTN") {
-        	loader.loadScene(1);
+        	SceneManager.LoadScene(sceneNum);
+        } else {
+        	Application.Quit();
         }
     }
 }

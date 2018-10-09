@@ -264,9 +264,11 @@ MonoBehaviour:
   speed: 5
   jumpPower: 8
   player: {fileID: 50542339742389514}
-  healthBar: {fileID: 0}
-  moneyBar: {fileID: 0}
+  healthBar: {fileID: 114430716759627554, guid: 7f24057652fb0ee43850b7b720db11e2,
+    type: 2}
+  moneyBar: {fileID: 114106657576030192, guid: 7f24057652fb0ee43850b7b720db11e2, type: 2}
   isWalking: 0
+  winningWindow: {fileID: 0}
   onGroundOffset: 0.15
   trunAngle: 180
   jump: 0
@@ -317,6 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 70346058340136228}
+  playerScript: {fileID: 0}
 --- !u!212 &212437598879239058
 SpriteRenderer:
   m_ObjectHideFlags: 1

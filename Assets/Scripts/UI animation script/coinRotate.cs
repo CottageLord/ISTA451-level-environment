@@ -20,7 +20,7 @@ public class coinRotate : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (rotating) {
-			print(this.transform.eulerAngles);
+			
 			this.transform.eulerAngles += rotation;
 		}
 	}
