@@ -8,7 +8,6 @@ public class win : MonoBehaviour {
 	public Transform winningWindow;
 	public Transform losingWindow;
 	public int anountToWin;
-	public Text info;
 
 	// Use this for initialization
 	void Start () {

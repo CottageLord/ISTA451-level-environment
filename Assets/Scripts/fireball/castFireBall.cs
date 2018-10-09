@@ -12,7 +12,7 @@ public class castFireBall : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButtonDown("Fire1")) {
+		if(Input.GetKeyDown("f")) {
 			if(fireballs.Count > maxFireBalls) return;
 
 			newFireBall = Instantiate<fireball>(fireBall);
@@ -21,7 +21,7 @@ public class castFireBall : MonoBehaviour {
 			newFireBall.caster = this;
 		}
 		
-		if(Input.GetButtonUp("Fire1") && newFireBall != null) {
+		if(Input.GetKeyUp("f") && newFireBall != null) {
 			if(caster.trunAngle == 0){
 				newFireBall.speed = new Vector3(0.1f, 0f, 0f);
 			} else {

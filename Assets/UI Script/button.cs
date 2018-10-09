@@ -10,6 +10,7 @@ public class button : MonoBehaviour, IPointerDownHandler {
     {
         //Output the name of the GameObject that is being clicked
         if(name == "startBTN") {
+        	Time.timeScale = 1;
         	SceneManager.LoadScene(sceneNum);
         } else {
         	Application.Quit();
